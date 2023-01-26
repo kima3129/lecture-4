@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "functions_to_implenent.cpp"
+//#include "functions_to_implenent.cpp"
 #include<vector>
 
 TEST_CASE ("2's are removed", "[RemoveTwos]") {
