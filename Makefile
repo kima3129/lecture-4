@@ -1,13 +1,13 @@
-CXX = g++ 
+CXX = g++
 CXXFLAGS = -std=c++20 -Wall
 
 all: main test
 
-clean:
-    rm main *.o
+Point: test.cpp
+	$(CXX) $(CXXFLAGS) test.cpp -o test
 
-test: test.cpp
-    $(CXX) $(CXXFLAGS) test.cpp -o test
-    
 main: main.cpp
-    $(CXX) $(CXXFLAGS) main.cpp -o main
+	$(CXX) $(CXXFLAGS) main.cpp -o main
+
+clean:
+	rm main *.o
