@@ -3,11 +3,14 @@ CXXFLAGS = -std=c++20 -Wall
 
 all: main test
 
-Point: test.cpp
-	$(CXX) $(CXXFLAGS) test.cpp -o test
+functions_to_implement.o: functions_to_implement.cpp
+	$(CXX) $(CXXFLAGS) -Wall -c functions_to_implement.cpp
 
-main: main.cpp
-	$(CXX) $(CXXFLAGS) main.cpp -o main
+Point: functions_to_implement.o test.cpp
+	$(CXX) $(CXXFLAGS) functions_to_implement.o test.cpp -o test
+
+main: functions_to_implement.o main.cpp
+	$(CXX) $(CXXFLAGS) functions_to_implement.o main.cpp -o main
 
 clean:
 	rm main *.o
